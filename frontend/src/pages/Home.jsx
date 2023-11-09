@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BsInfoCircle } from "react-icons/bs";
 import { MdOutlineAddBox, MdOutlineDelete } from "react-icons/md";
-import "../assets/css/styles.css"
+
 
 const Home = () => {
   const [recipes, setRecipes] = useState([]);
@@ -24,7 +24,7 @@ const Home = () => {
       });
   }, []);
   return (
-    <div className="p-4 main-page">
+    <div className="p-4 mt-10">
       <div className="flex justify-between items-center"></div>
       {loading ? (
         <Spinner />
@@ -32,18 +32,18 @@ const Home = () => {
         <table className="w-full border-spacing-2">
           <thead>
             <tr>
-              <th className="border">No</th>
-              <th className="border">Recipe Name</th>
-              <th className="border">Operations</th>
+              <th className="border p-4">No</th>
+              <th className="border p-4">Recipe Name</th>
+              <th className="border p-4">Operations</th>
             </tr>
           </thead>
           <tbody>
             {recipes.map((recipe, index) => (
               <tr key={recipe._id} className="h-8">
-                <td className="border text-center">{index + 1}</td>
-                <td className="border text-center">{recipe.name}</td>
-                <td className="border text-center">
-                  <div className="flex justify-center gap-x-4">
+                <td className="border text-center p-4">{index + 1}</td>
+                <td className="border text-center p-4">{recipe.name}</td>
+                <td className="border text-center p-4">
+                  <div className="flex justify-center space-x-4">
                     <Link to={`/recipes/details/${recipe?._id}`}>
                       <BsInfoCircle className="text-2xl text-green-800" />
                     </Link>
