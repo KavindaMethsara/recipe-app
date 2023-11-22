@@ -65,7 +65,7 @@ router.put("/:id", async (request, response) => {
       !request.body.description
     ) {
       return response.status(400).send({
-        message: "Send all reuired fields: name, ingredients, description",
+        message: "Send all required fields: name, ingredients, description",
       });
     }
 
